@@ -53,15 +53,13 @@ class File:
       f.write('\n'.join(contents))
     return
     
-TARGET_URL_FILE = '../url.txt'
-TARGET_SELECTOR_FILE = '../selector.txt'
+TARGET_URL_FILE = '../url_list.txt'
+TARGET_SELECTOR_FILE = '../selector.csv'
 RESULT_FILE = '../result.csv'
 
 def main():
   urls = File(TARGET_URL_FILE).read()
-  urls.remove('')
   selector_list = File(TARGET_SELECTOR_FILE).read()
-  selector_list.remove('')
   selectors = Selector.create(selector_list)
   results = []
   for url in urls:

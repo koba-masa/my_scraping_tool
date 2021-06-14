@@ -53,9 +53,9 @@ class File:
       f.write('\n'.join(contents))
     return
     
-TARGET_URL_FILE = '../url_list.txt'
-TARGET_SELECTOR_FILE = '../selector.csv'
-RESULT_FILE = '../result.csv'
+TARGET_URL_FILE = './url_list.txt'
+TARGET_SELECTOR_FILE = './selector.csv'
+RESULT_FILE = './result.csv'
 
 def main():
   urls = File(TARGET_URL_FILE).read()

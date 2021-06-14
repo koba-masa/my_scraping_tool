@@ -17,6 +17,13 @@ class Selector:
     return selectors
       
 class WebPage:
+  UA_TYPE_PC = 'PC'
+  UA_TYPE_SP = 'SP'
+  USER_AGENT = {
+    UA_TYPE_PC: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36',
+    UA_TYPE_SP: 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'
+  }
+
   def __init__(self, url, selectors):
     self.url = url
     self.selectors = selectors
@@ -24,18 +31,20 @@ class WebPage:
   def get(self):
     results = []
     for selector in self.selectors:
-      results.extend(self.select(selector))
+      results.extend(self.select(selector, self.UA_TYPE_PC))
+      results.extend(self.select(selector, self.UA_TYPE_SP))
     return results
 
-  def select(self, selector):
-    html = requests.get(self.url)
+  def select(self, selector, user_agent=UA_TYPE_PC):
+    headers = {'user-agent': self.USER_AGENT[user_agent]}
+    html = requests.get(self.url, headers=headers)
     soup = BeautifulSoup(html.content, "html.parser")
     elements = soup.select(selector.css_selector)
     results = None
     if selector.is_text:
-      results = [self.url + ',' + selector.name + ',' + e.get_text() for e in elements]
+      results = [self.url + ',' + user_agent + ',' + selector.name + ',' + e.get_text() for e in elements]
     else:
-      results = [self.url + ',' + selector.name + ',' + e[selector.att_key] for e in elements]
+      results = [self.url + ',' + user_agent + ','+ selector.name + ',' + e[selector.att_key] for e in elements]
     return results
 
 class File:
@@ -43,16 +52,16 @@ class File:
     self.path = path
 
   def read(self):
-    contentes = []
+    contents = []
     with open(self.path) as f:
-      contentes = [l.strip() for l in f.readlines()]
-    return contentes
+      contents = [l.strip() for l in f.readlines()]
+    return contents
   
   def write(self, contents):
     with open(self.path, mode='w') as f:
       f.write('\n'.join(contents))
     return
-    
+
 TARGET_URL_FILE = './url_list.txt'
 TARGET_SELECTOR_FILE = './selector.csv'
 RESULT_FILE = './result.csv'

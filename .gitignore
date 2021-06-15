@@ -1,6 +1,10 @@
 /url_list.txt
+/url_list.txt.*
 /selector.csv
+/selector.csv.*
 /result.csv
+/result.csv.*
+tmp
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

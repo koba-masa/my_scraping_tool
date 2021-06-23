@@ -35,6 +35,10 @@
    $ docker-compose exec app python <対象アプリケーション>
    ```
    - [Wiki-アプリケーション一覧](https://github.com/koba-masa/my_scraping_tool/wiki/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E4%B8%80%E8%A6%A7)参照
+
+#### 注意事項
+- Dockerコンテナ内からアクセスすることになるため、`localhost`を`host.docker.internal`に書き換える必要がある
+
 ## テスト実行手順
 1. `Docker`を起動する
    ```

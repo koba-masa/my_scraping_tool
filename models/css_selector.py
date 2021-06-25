@@ -26,6 +26,6 @@ class CssSelector:
 
       tmp = csv_line.split(',')
       if not len(tmp) == self.CSV_COLMUN_COUNT:
-        raise Exception(str(index + 1) + "行目の項目数が間違っています。" + str(len(tmp) + "/" + self.CSV_COLMUN_COUNT))
+        raise Exception(str(index + 1) + "行目の項目数が間違っています。" + str(len(tmp)) + "/" + str(self.CSV_COLMUN_COUNT))
       css_selectors.append(CssSelector(tmp[0], tmp[1], tmp[2]))
     return css_selectors

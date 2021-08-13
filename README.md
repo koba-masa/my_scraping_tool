@@ -32,7 +32,7 @@
    ```
 1. 対象のアプリケーションを実行する
    ```
-   $ docker-compose exec app python <対象アプリケーション>
+   $ docker-compose exec app poetry run python <対象アプリケーション>
    ```
    - [Wiki-アプリケーション一覧](https://github.com/koba-masa/my_scraping_tool/wiki/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E4%B8%80%E8%A6%A7)参照
 

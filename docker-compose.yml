@@ -7,6 +7,7 @@ services:
       dockerfile: ./docker_files/Dockerfile
     volumes:
       - .:/usr/src/app
+      - app_poetry:/root/.cache/pypoetry
     tty: true
     environment:
       PYTHONPATH: /usr/src/app/my_scraping_tool
@@ -16,3 +17,7 @@ services:
     image: kennethreitz/httpbin
     ports:
       - 80:80
+
+volumes:
+  app_poetry:
+    external: false

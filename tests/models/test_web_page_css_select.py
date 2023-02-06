@@ -4,8 +4,8 @@ import requests
 from models.web_page import WebPage
 from models.web_page_css_select import WebPageCssSelect
 
-TARGET_URL = "http://localhost"
-LOCATION = "http://localhost/location"
+TARGET_URL = "http://httpbin"
+LOCATION = "http://httpbin/location"
 
 def test_create_instance():
   selector_name = "title"

@@ -6,13 +6,19 @@ services:
       context: .
       dockerfile: ./docker_files/Dockerfile
     volumes:
-      - .:/usr/src/app
+      - .:/usr/src/my_scraping_tool
+      - app_poetry:/root/.cache/pypoetry
     tty: true
     environment:
-      PYTHONPATH: /usr/src/app
+      PYTHONPATH: /usr/src/my_scraping_tool/my_scraping_tool
+      PYTHONDONTWRITEBYTECODE: 1
     command: bash -c "poetry install; /bin/bash"
 
   httpbin:
     image: kennethreitz/httpbin
     ports:
       - 80:80
+
+volumes:
+  app_poetry:
+    external: false

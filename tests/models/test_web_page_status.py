@@ -4,8 +4,8 @@ import requests
 from models.web_page import WebPage
 from models.web_page_status import WebPageStatus
 
-TARGET_URL = "http://localhost"
-LOCATION = "http://localhost/location"
+TARGET_URL = "http://httpbin"
+LOCATION = "http://httpbin/location"
 
 def test_create_instance():
   assert type(WebPageStatus(TARGET_URL, WebPage.UA_TYPE_PC, requests.codes.ok, "")) \

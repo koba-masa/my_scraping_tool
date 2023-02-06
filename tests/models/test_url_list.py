@@ -7,8 +7,8 @@ URL_LIST_TEST = 'tests/test_url_list.txt'
 
 def before():
   with open(URL_LIST_TEST, mode='w') as f:
-    f.write("http://localhost/status/200" + "\n")
-    f.write("http://localhost/status/301" + "\n")
+    f.write("http://httpbin/status/200" + "\n")
+    f.write("http://httpbin/status/301" + "\n")
 
 def after():
   os.remove(URL_LIST_TEST)
@@ -26,6 +26,6 @@ def test_create_instance():
 def test_read():
   results = UrlList(URL_LIST_TEST).read()
   assert type(results) is list
-  assert "http://localhost/status/301" in results
+  assert "http://httpbin/status/301" in results
 
 #after()

@@ -5,20 +5,20 @@ from models.web_page import WebPage
 from models.web_page_status import WebPageStatus
 
 def test_create_instane():
-  assert type(WebPage("http://localhost")) is WebPage
+  assert type(WebPage("http://httpbin")) is WebPage
   with pytest.raises(Exception):
     WebPage()
-    WebPage("http://localhost", "test")
+    WebPage("http://httpbin", "test")
 
 def test_can_get():
-  assert type(WebPage("http://localhost/get").get() ) is requests.models.Response
+  assert type(WebPage("http://httpbin/get").get() ) is requests.models.Response
 
 def test_cannot_get_unexists_url():
   with pytest.raises(Exception):
-    WebPage("https://localhost:433").get()
+    WebPage("https://httpbin:433").get()
 
 def test_get_status_code():
-  target_url = "http://localhost"
+  target_url = "http://httpbin"
   results = WebPage(target_url).get_status_code()
   assert type(results) is list
   assert type(results[0]) is WebPageStatus
@@ -28,7 +28,7 @@ def test_get_status_code():
   assert results[0].location == ""
 
 def test_get_status_code_404_page():
-  target_url = "http://localhost/status/404"
+  target_url = "http://httpbin/status/404"
   results = WebPage(target_url).get_status_code()
   assert type(results) is list
   assert type(results[0]) is WebPageStatus
@@ -38,7 +38,7 @@ def test_get_status_code_404_page():
   assert results[0].location == ""
 
 def test_get_status_code_301_page():
-  target_url = "http://localhost/status/301"
+  target_url = "http://httpbin/status/301"
   results = WebPage(target_url).get_status_code()
   assert type(results) is list
   assert type(results[0]) is WebPageStatus

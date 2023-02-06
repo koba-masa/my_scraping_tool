@@ -9,7 +9,7 @@ services:
       - .:/usr/src/app
     tty: true
     environment:
-      PYTHONPATH: /usr/src/app
+      PYTHONPATH: /usr/src/app/my_scraping_tool
     command: bash -c "poetry install; /bin/bash"
 
   httpbin:

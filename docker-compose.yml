@@ -10,7 +10,8 @@ services:
       - app_poetry:/root/.cache/pypoetry
     tty: true
     environment:
-      PYTHONPATH: /usr/src/app/my_scraping_tool
+      PYTHONPATH: /usr/src/my_scraping_tool/my_scraping_tool
+      PYTHONDONTWRITEBYTECODE: 1
     command: bash -c "poetry install; /bin/bash"
 
   httpbin:

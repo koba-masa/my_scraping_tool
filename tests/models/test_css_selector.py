@@ -39,8 +39,13 @@ def test_instance_without_params():
     CssSelector()
 
 def test_read():
-  assert type(CssSelector.read()) is list
-  assert type(CssSelector.read()[0]) is CssSelector
+  css_selectors = CssSelector.read(CSS_SELECTOR_TEST)
+  assert type(css_selectors) is list
+  assert type(css_selectors[0]) is CssSelector
+
+def test_read_without_params():
+  with pytest.raises(TypeError):
+    CssSelector.read()
 
 def test_read_not_exists_file():
   with pytest.raises(FileNotFoundError):

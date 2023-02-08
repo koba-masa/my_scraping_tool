@@ -1,7 +1,6 @@
 import os
 
 class CssSelector:
-  DEFAULT_CSS_SELECTOR = 'config/css_selector.csv'
   CSV_COLMUN_COUNT = 3
 
   def __init__(self, selector_name, css_selector, attribute_key=None):
@@ -11,7 +10,7 @@ class CssSelector:
     self.is_text = True if self.attribute_key is None else False
 
   @classmethod
-  def read(self, css_selector_path=DEFAULT_CSS_SELECTOR):
+  def read(self, css_selector_path):
     if not os.path.exists(css_selector_path):
       raise FileNotFoundError()
 

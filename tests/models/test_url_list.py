@@ -15,11 +15,14 @@ def after():
 
 before()
 
-def test_create_instance():
-  assert type(UrlList()) is UrlList
+def test_init():
   assert type(UrlList(URL_LIST_TEST)) is UrlList
-  with pytest.raises(Exception):
-    UrlList(URL_LIST_TEST, "test")
+
+def test_init_without_params():
+  with pytest.raises(TypeError):
+    UrlList()
+
+def test_init_not_exists_file():
   with pytest.raises(FileNotFoundError):
     UrlList("tests/test_not_exists_url_list.txt")
 

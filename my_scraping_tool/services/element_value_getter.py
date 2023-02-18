@@ -1,15 +1,17 @@
 from bs4 import BeautifulSoup
 
+from services.base import Base
 from models.config.url_list import UrlList
 from models.config.css_selector import CssSelector
 from models.web.page import Page
 from models.web.user_agent import UserAgent
 
-class ElementValueGetter():
+class ElementValueGetter(Base):
   def __init__(self, urls_config, css_selectors_config):
     self.urls = UrlList(urls_config).read()
     self.css_selectors = CssSelector.read(css_selectors_config)
     self.results = []
+    super().__init__()
 
   def execute(self):
     results = []

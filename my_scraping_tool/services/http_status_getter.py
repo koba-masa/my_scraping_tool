@@ -1,11 +1,13 @@
+from services.base import Base
 from models.config.url_list import UrlList
 from models.web.page import Page
 from models.web.user_agent import UserAgent
 
-class HttpStatusGetter:
+class HttpStatusGetter(Base):
   def __init__(self, urls_config):
     self.urls = UrlList(urls_config).read()
     self.results = []
+    super().__init__()
 
   def execute(self):
     for url in self.urls:

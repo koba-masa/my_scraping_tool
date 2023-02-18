@@ -2,7 +2,7 @@ import pytest
 
 from services.http_status_getter import HttpStatusGetter
 
-URLS_CONFIG = 'config/test/urls.txt'
+URLS_CONFIG = 'config/test/urls/for_http_status.txt'
 
 def test_init():
   instance = HttpStatusGetter(URLS_CONFIG)

@@ -2,7 +2,7 @@ from models.url_list import UrlList
 from models.css_selector import CssSelector
 from models.web_page_css_select import WebPageCssSelect
 from models.result import Result
-from service.scraping import Scraping
+from services.scraping import Scraping
 
 def main():
   urls = UrlList().read()

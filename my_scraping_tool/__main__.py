@@ -14,7 +14,7 @@ class MyScrapingTool:
     elif function_name == 'element_value':
       executor = ElementValueGetter(self.URLS_CONFIG, self.CSS_SELECTORS_CONFIG)
     else:
-      print("Specified function is not exist.: {function_name}")
+      print('Specified function is not exist.: %s' % function_name)
       sys.exit(99)
 
     executor.execute()

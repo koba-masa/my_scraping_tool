@@ -20,4 +20,4 @@ class MyScrapingTool:
     executor.execute()
 
 if __name__ == '__main__':
-  MyScrapingTool(sys.argv[0]).execute()
+  MyScrapingTool().execute(sys.argv[1])

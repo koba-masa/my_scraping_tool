@@ -3,7 +3,7 @@ import os
 
 from models.config.css_selector import CssSelector
 
-CSS_SELECTOR_TEST = 'config/test/css_selector.csv'
+CSS_SELECTOR_TEST = 'config/test/css_selectors/for_attribute_value.csv'
 
 @pytest.mark.parametrize(
   "selector_name, css_selector, attribute_key, expect_attribute_key, expect_is_text",

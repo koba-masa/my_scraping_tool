@@ -1,7 +1,7 @@
-config/url_list.txt
-config/url_list.txt.*
-config/css_selector.csv
-config/css_selector.csv.*
+config/*
+!config/test
+!config/*.sample
+!config/settings.yml
 result.csv
 result.csv.*
 tmp

@@ -1,19 +1,9 @@
 import pytest
 import os
 
-from models.css_selector import CssSelector
+from models.config.css_selector import CssSelector
 
-CSS_SELECTOR_TEST = 'tests/test_css_selector.csv'
-
-def before():
-  with open(CSS_SELECTOR_TEST, mode='w') as f:
-    f.write("title,title," + "\n")
-    f.write("charset,meta[charset],charset" + "\n")
-
-def after():
-  os.remove(CSS_SELECTOR_TEST)
-
-before()
+CSS_SELECTOR_TEST = 'config/test/css_selectors/for_attribute_value.csv'
 
 @pytest.mark.parametrize(
   "selector_name, css_selector, attribute_key, expect_attribute_key, expect_is_text",

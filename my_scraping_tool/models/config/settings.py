@@ -1,0 +1,2 @@
+class Settings:
+  config = None

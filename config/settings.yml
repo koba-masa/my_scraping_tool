@@ -1,0 +1,6 @@
+http_status_getter:
+  output:
+    file: 'tmp/result/{0}_http_status_getter.csv'
+element_value_getter:
+  output:
+    file: 'tmp/result/{0}_element_value_getter.csv'

@@ -1,0 +1,8 @@
+base:
+  sample: 'sample value'
+http_status_getter:
+  output:
+    file: 'tmp/test/{0}_http_status_getter.csv'
+element_value_getter:
+  output:
+    file: 'tmp/test/{0}_element_value_getter.csv'

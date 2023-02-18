@@ -1,6 +1,7 @@
 config/*
 !config/test
 !config/*.sample
+!config/settings.yml
 result.csv
 result.csv.*
 tmp

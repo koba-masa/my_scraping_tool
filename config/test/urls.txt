@@ -1,0 +1,3 @@
+http://httpbin/status/500
+http://httpbin/status/200
+http://httpbin/status/400

@@ -7,7 +7,7 @@ from services.http_status_getter import HttpStatusGetter
 from models.config.settings import Settings
 
 URLS_CONFIG = 'config/test/urls/for_http_status.txt'
-OUTPUT_FILE = 'tmp/test/*_http_status_getter.csv'
+OUTPUT_FILE = 'tmp/result/test/*_http_status_getter.csv'
 
 def test_init():
   instance = HttpStatusGetter(URLS_CONFIG)

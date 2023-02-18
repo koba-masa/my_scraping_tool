@@ -9,7 +9,7 @@ from models.config.settings import Settings
 
 URLS_CONFIG = 'config/test/urls/for_css_selector.txt'
 CSS_SELECTORS_CONFIG = 'config/test/css_selectors/for_attribute_value.csv'
-OUTPUT_FILE = 'tmp/test/*_element_value_getter.csv'
+OUTPUT_FILE = 'tmp/result/test/*_element_value_getter.csv'
 
 def test_init():
   instance = ElementValueGetter(URLS_CONFIG, CSS_SELECTORS_CONFIG)

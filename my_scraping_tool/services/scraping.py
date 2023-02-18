@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-from models.css_selector import CssSelector
+from models.config.css_selector import CssSelector
 from models.web_page import WebPage
 from models.web_page_css_select import WebPageCssSelect
 

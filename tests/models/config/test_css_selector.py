@@ -1,7 +1,7 @@
 import pytest
 import os
 
-from models.css_selector import CssSelector
+from models.config.css_selector import CssSelector
 
 CSS_SELECTOR_TEST = 'tests/test_css_selector.csv'
 

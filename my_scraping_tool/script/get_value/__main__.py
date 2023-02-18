@@ -1,5 +1,5 @@
 from models.url_list import UrlList
-from models.css_selector import CssSelector
+from models.config.css_selector import CssSelector
 from models.web_page_css_select import WebPageCssSelect
 from models.result import Result
 from services.scraping import Scraping

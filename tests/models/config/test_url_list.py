@@ -1,7 +1,7 @@
 import pytest
 import os
 
-from models.url_list import UrlList
+from models.config.url_list import UrlList
 
 URL_LIST_TEST = 'config/test/urls/for_url_list.txt'
 

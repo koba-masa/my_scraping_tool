@@ -1,4 +1,4 @@
-from models.url_list import UrlList
+from models.config.url_list import UrlList
 from models.web.page import Page
 from models.web.user_agent import UserAgent
 

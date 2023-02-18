@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-from models.url_list import UrlList
+from models.config.url_list import UrlList
 from models.config.css_selector import CssSelector
 from models.web.page import Page
 from models.web.user_agent import UserAgent
